@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Tutorial.urls'
+ROOT_URLCONF = 'Rukomyslo.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Tutorial.wsgi.application'
+WSGI_APPLICATION = 'Rukomyslo.wsgi.application'
 
 
 # Database
@@ -77,8 +77,11 @@ WSGI_APPLICATION = 'Tutorial.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'Rukomyslo',
+        'ENGINE': 'sql_server.pyodbc',
+        'HOST': 'dbserver\\ss2008',
+        'USER': 'rukomyslyit@gmail.com',
+        'PASSWORD': 'rukomyslyqw!@',
     }
 }
 
