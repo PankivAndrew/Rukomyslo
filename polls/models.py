@@ -1,5 +1,4 @@
 from django.db import models
-from django import forms
 from django.contrib.auth.models import User
 
 
@@ -18,7 +17,7 @@ class Product(models.Model):
     Description = models.TextField()
     Quantity = models.IntegerField()
     Address = models.CharField(max_length=200)
-    CategoryID = models.ForeignKey(Categories, on_delete=models.CASCADE)
+    Category = models.ForeignKey(Categories, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.Name
@@ -90,7 +89,7 @@ class Materials(models.Model):
 class MaterialsProduct(models.Model):
     MaterialsID = models.ForeignKey(Materials, on_delete=models.CASCADE)
     ProductID = models.ForeignKey(Product, on_delete=models.CASCADE)
-    ID = models.IntegerField()
+    LocalID = models.IntegerField()
 
     def __str__(self):
-        return self.ID
+        return self.LocalID
