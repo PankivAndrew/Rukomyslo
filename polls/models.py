@@ -1,23 +1,24 @@
 from django.db import models
 from django import forms
+from django.contrib.auth.models import User
 
 
-class Product(models.Model):
-    ProductID = models.IntegerField()
-    Name = models.CharField(max_length=200)
-    Price = models.DecimalField()
-    Description = models.TextField()
-    Quantity = models.IntegerField()
-    Address = models.CharField(max_length=200)
-    CategoryID = models.ForeignKey(Categories, on_delete=models.CASCADE)
+class Categories(models.Model):
+    CategoryID = models.IntegerField(primary_key=True)
+    Name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.Name
 
 
-class Categories(models.Model):
-    CategoryID = models.IntegerField()
-    Name = models.CharField(max_length=100)
+class Product(models.Model):
+    ProductID = models.IntegerField(primary_key=True)
+    Name = models.CharField(max_length=200)
+    Price = models.DecimalField(max_digits=10,decimal_places=5)
+    Description = models.TextField()
+    Quantity = models.IntegerField()
+    Address = models.CharField(max_length=200)
+    CategoryID = models.ForeignKey(Categories, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.Name
@@ -37,7 +38,7 @@ class ProductContactPerson(models.Model):
 class ProductImages(models.Model):
     ImageID = models.IntegerField()
     Image = models.ImageField
-    NameOfImage = models.CharField(50)
+    NameOfImage = models.CharField(max_length=50)
     ProductID = models.ForeignKey(Product, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -45,20 +46,18 @@ class ProductImages(models.Model):
 
 
 class Customer(models.Model):
-    CustomerID = models.IntegerField()
-    Nick = models.CharField(max_length=100)
-    Email = models.CharField(max_length=100)
+    CustomerID = models.IntegerField(primary_key=True)
+    user = models.OneToOneField(User)
     PhoneNumber = models.CharField(max_length=13)
-    Password = models.CharField(widget=forms.PasswordInput)
 
     def __str__(self):
         return self.Nick
 
 
 class Order(models.Model):
-    OrderID = models.IntegerField()
+    OrderID = models.IntegerField(primary_key=True)
     CustomerID = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    OrderTotalPrice = models.DecimalField()
+    OrderTotalPrice = models.DecimalField(max_digits=10,decimal_places=5)
     OrderDate = models.DateField()
     OrderDetails = models.TextField()
 
@@ -72,7 +71,7 @@ class OrderProduct(models.Model):
     ProductQuantity = models.IntegerField
     ProductID = models.ForeignKey(Product, on_delete=models.CASCADE)
     Name = models.CharField(max_length=100)
-    Price = models.DecimalField()
+    Price = models.DecimalField(max_digits=10,decimal_places=5)
     Description = models.TextField()
     IsDeleted = models.BinaryField()
 
@@ -81,7 +80,7 @@ class OrderProduct(models.Model):
 
 
 class Materials(models.Model):
-    MaterialsID = models.IntegerField
+    MaterialsID = models.IntegerField(primary_key=True)
     Name = models.CharField(max_length=100)
 
     def __str__(self):

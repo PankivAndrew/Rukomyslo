@@ -2,7 +2,6 @@
 import os
 import sys
 
-from Rukomyslo import settings
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Rukomyslo.settings")

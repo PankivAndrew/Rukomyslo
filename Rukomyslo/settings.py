@@ -74,18 +74,16 @@ WSGI_APPLICATION = 'Rukomyslo.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Rukomyslo',
-        'ENGINE': 'sql_server.pyodbc',
-        'HOST': 'dbserver\\ss2008',
-        'USER': 'rukomyslyit@gmail.com',
-        'PASSWORD': 'rukomyslyqw!@',
+        'USER': 'root',
+        'PASSWORD': 'pankiv020998',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
