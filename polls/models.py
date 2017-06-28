@@ -25,7 +25,7 @@ class Product(models.Model):
 
 class ProductContactPerson(models.Model):
     PersonID = models.IntegerField()
-    ProductID = models.ForeignKey(Product, on_delete=models.CASCADE)
+    Product = models.ForeignKey(Product, on_delete=models.CASCADE)
     ContactPerson = models.CharField(max_length=100)
     Phone1 = models.CharField(max_length=13)
     Phone2 = models.CharField(max_length=13)
@@ -36,9 +36,9 @@ class ProductContactPerson(models.Model):
 
 class ProductImages(models.Model):
     ImageID = models.IntegerField()
-    Image = models.ImageField
+    Image = models.ImageField()
     NameOfImage = models.CharField(max_length=50)
-    ProductID = models.ForeignKey(Product, on_delete=models.CASCADE)
+    Product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.NameOfImage
@@ -55,7 +55,7 @@ class Customer(models.Model):
 
 class Order(models.Model):
     OrderID = models.IntegerField(primary_key=True)
-    CustomerID = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    Customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     OrderTotalPrice = models.DecimalField(max_digits=10,decimal_places=5)
     OrderDate = models.DateField()
     OrderDetails = models.TextField()
@@ -65,10 +65,10 @@ class Order(models.Model):
 
 
 class OrderProduct(models.Model):
-    OrderID = models.ForeignKey(Order, on_delete=models.CASCADE)
+    Order = models.ForeignKey(Order, on_delete=models.CASCADE)
     Order_ProductID = models.IntegerField
     ProductQuantity = models.IntegerField
-    ProductID = models.ForeignKey(Product, on_delete=models.CASCADE)
+    Product = models.ForeignKey(Product, on_delete=models.CASCADE)
     Name = models.CharField(max_length=100)
     Price = models.DecimalField(max_digits=10,decimal_places=5)
     Description = models.TextField()
@@ -87,8 +87,8 @@ class Materials(models.Model):
 
 
 class MaterialsProduct(models.Model):
-    MaterialsID = models.ForeignKey(Materials, on_delete=models.CASCADE)
-    ProductID = models.ForeignKey(Product, on_delete=models.CASCADE)
+    Materials = models.ForeignKey(Materials, on_delete=models.CASCADE)
+    Product = models.ForeignKey(Product, on_delete=models.CASCADE)
     LocalID = models.IntegerField()
 
     def __str__(self):

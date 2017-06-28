@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href={% static 'polls/product/prod.css' %}>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="icon" href="http://rukomysly.com.ua/image/catalog/favicon.png" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marck+Script">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pangolin">
+  <title> Рукомисли </title>
+  <script src="prodj.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div class="header-left-part">
+      <img src="logo.jpg" alt="">
+      <div class="header-logo">
+        <!-- <span class="small-text">Соціальне підприємництво</span> -->
+        <span>Рукомисли</span>
+      </div>
+    </div>
+    <div class="header-right-part">
+      <a href="/home">Головна</a>
+      <a href="/products">Вироби</a>
+      <a href="/about"> Про нас</a>
+      <a href="/login">Зайти</a>
+    </div>
+  </div>
+  <div class="main-container">
+    <div class="prod-background">
+      <img src="big_img.png">
+    </div>
+    <div class="cart-container" ondragover="allowDrop(event)" ondrop="drop(event)">
+      <hr>
+      <div class="cart">
+        <span> Корзина </span>
+        <div class="cart-item" draggable="true">
+          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190540_1871620206454095_8424946997986623246_n.jpg?oh=3d3e47516fd31d1f63e861f8c461201b&oe=59E42EDB" alt="">
+          <span> Назва продукту</span>
+          <span> 100  </span>
+        </div>
+        <div class="cart-item" draggable="true">
+          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190776_1871620186454097_795380121869963795_n.jpg?oh=aad605e21e2714d9065d74e71b6655f3&oe=59D75414" alt="">
+          <span> Назва продукту</span>
+          <span> 100  </span>
+        </div>
+        <div class="cart-item" draggable="true">
+          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/16997689_1871620229787426_8545824893734228741_n.jpg?oh=04334a75877f33b457bcd7d639f5ee97&oe=59A7654C" alt="">
+          <span> Назва продукту</span>
+          <span> 100  </span>
+        </div>
+      </div>
+      <hr>
+      <div class="total-price">
+        <span> Загальна ціна: </span>
+        <span> 300 </span>
+        <br>
+        <button type="button" class="cart-button" data-toggle="modal" data-target=".bs-example-modal-lg-1">Купити</button>
+
+
+      </div>
+      <hr>
+      <div class="filter">
+        <span> Фільтр </span>
+        <div class="material">
+          <select>
+            <option>Вироби з вовни</option>
+            <option>Розпис по тканині</option>
+            <option>Садово-паркова пластика</option>
+          </select>
+          <select>
+            <option>Бавовна</option>
+            <option>Деревина</option>
+            <option>Шовк</option>
+          </select>
+          <button type="button" class="cart-button"> Пошук </button>
+        </div>
+
+      </div>
+    </div>
+    <div class="products-search-container">
+      <div class="search-container">
+        <input type="e-mail" placeholder="Введіть запит для пошуку...">
+        <button type="button"> Знайти </button>
+      </div>
+      <div class="products-container">
+        <div class="product" id="product-1" draggable="true" ondragstart="drag(event)">
+          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17201227_1871620226454093_9001221302285229406_n.jpg?oh=9aeb8d61d23281c18ad0fe7df55b57af&oe=59CFEA61" alt="">
+          <div class="product-content">
+            <span class="product-name"> Назва продукту </span>
+            <br>
+            <span class="product-price"> 100 </span>
+            <br>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Більше</button>
+          </div>
+        </div>
+        <div class="product" id="product-2" draggable="true" ondragstart="drag(event)">
+          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190540_1871620206454095_8424946997986623246_n.jpg?oh=3d3e47516fd31d1f63e861f8c461201b&oe=59E42EDB" alt="">
+          <div class="product-content">
+            <span class="product-name"> Назва продукту </span>
+            <br>
+            <span class="product-price"> 100 </span>
+            <br>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Більше</button>
+          </div>
+        </div>
+        <div class="product" id="product-3" draggable="true" ondragstart="drag(event)">
+          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190776_1871620186454097_795380121869963795_n.jpg?oh=aad605e21e2714d9065d74e71b6655f3&oe=59D75414" alt="">
+          <div class="product-content">
+            <span class="product-name"> Назва продукту </span>
+            <br>
+            <span class="product-price"> 100 </span>
+          </div>
+        </div>
+        <div class="product" id="product-4" draggable="true" ondragstart="drag(event)">
+          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/16997689_1871620229787426_8545824893734228741_n.jpg?oh=04334a75877f33b457bcd7d639f5ee97&oe=59A7654C" alt="">
+          <div class="product-content">
+            <span class="product-name"> Назва продукту </span>
+            <br>
+            <span class="product-price"> 100 </span>
+          </div>
+        </div>
+        <div class="product" id="product-5" draggable="true" ondragstart="drag(event)">
+          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17201227_1871620226454093_9001221302285229406_n.jpg?oh=9aeb8d61d23281c18ad0fe7df55b57af&oe=59CFEA61" alt="">
+          <div class="product-content">
+            <span class="product-name"> Назва продукту </span>
+            <br>
+            <span class="product-price"> 100 </span>
+          </div>
+        </div>
+        <div class="product" id="product-6" draggable="true" ondragstart="drag(event)">
+          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190540_1871620206454095_8424946997986623246_n.jpg?oh=3d3e47516fd31d1f63e861f8c461201b&oe=59E42EDB" alt="">
+          <div class="product-content">
+            <span class="product-name"> Назва продукту </span>
+            <br>
+            <span class="product-price"> 100 </span>
+          </div>
+        </div>
+        <div class="product" id="product-7" draggable="true" ondragstart="drag(event)">
+          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190776_1871620186454097_795380121869963795_n.jpg?oh=aad605e21e2714d9065d74e71b6655f3&oe=59D75414" alt="">
+          <div class="product-content">
+            <span class="product-name"> Назва продукту </span>
+            <br>
+            <span class="product-price"> 100 </span>
+          </div>
+        </div>
+        <div class="product" id="product-8" draggable="true" ondragstart="drag(event)">
+          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/16997689_1871620229787426_8545824893734228741_n.jpg?oh=04334a75877f33b457bcd7d639f5ee97&oe=59A7654C" alt="">
+          <div class="product-content">
+            <span class="product-name"> Назва продукту </span>
+            <br>
+            <span class="product-price"> 100 </span>
+          </div>
+        </div>
+        <div class="product" id="product-9" draggable="true" ondragstart="drag(event)">
+          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17201227_1871620226454093_9001221302285229406_n.jpg?oh=9aeb8d61d23281c18ad0fe7df55b57af&oe=59CFEA61" alt="">
+          <div class="product-content">
+            <span class="product-name"> Назва продукту </span>
+            <br>
+            <span class="product-price"> 100 </span>
+          </div>
+        </div>
+        <div class="product" id="product-10" draggable="true" ondragstart="drag(event)">
+          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190540_1871620206454095_8424946997986623246_n.jpg?oh=3d3e47516fd31d1f63e861f8c461201b&oe=59E42EDB" alt="">
+          <div class="product-content">
+            <span class="product-name"> Назва продукту </span>
+            <br>
+            <span class="product-price"> 100 </span>
+          </div>
+        </div>
+        <div class="product" id="product-11" draggable="true" ondragstart="drag(event)">
+          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190776_1871620186454097_795380121869963795_n.jpg?oh=aad605e21e2714d9065d74e71b6655f3&oe=59D75414" alt="">
+          <div class="product-content">
+            <span class="product-name"> Назва продукту </span>
+            <br>
+            <span class="product-price"> 100 </span>
+          </div>
+        </div>
+        <div class="product" id="product-12" draggable="true" ondragstart="drag(event)">
+          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/16997689_1871620229787426_8545824893734228741_n.jpg?oh=04334a75877f33b457bcd7d639f5ee97&oe=59A7654C" alt="">
+          <div class="product-content">
+            <span class="product-name"> Назва продукту </span>
+            <br>
+            <span class="product-price"> 100 </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="footer">
+    <div class="three-el">
+      <div class="stay-con">
+        <div class="footer-sec-name">
+          <span> ЗАЛИШАЙТЕСЬ НА ЗВ'ЯЗКУ </span>
+        </div>
+        <div class="stay-con-text">
+          <span> Залиште свою пошту, щоб отримувати новини від нас </span>
+        </div>
+        <div class="mail">
+          <div class="stay-con-email">
+            <input type="e-mail" placeholder="E-mail">
+          </div>
+          <div class="stay-con-sign">
+            <button type="button"> Відправити </button>
+          </div>
+        </div>
+        <div class="stay-con-fb">
+          <a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">
+            <img src="fb-logo.png" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="middle">
+        <div class="footer-sec-name">
+          <span> НАЗВА ТЕКСТУ </span>
+        </div>
+        <div class="middle-text">
+          <span>
+            This paragraph
+            contains a lot of spaces
+            in the source code,
+            but the browser
+            ignores it. So, this is a test text and later
+            here will be cool text about something cool.
+          </span>
+        </div>
+      </div>
+      <div class="navigate">
+        <div class="footer-sec-name">
+          <span> НАВІГАЦІЯ </span>
+        </div>
+        <div class="navigate-table">
+          <table>
+            <tr>
+              <td><a href="https://www.facebook.com/pg/rukomysly/events/?ref=page_internal" target="_blank">Події</a></td>
+              <td><a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">Підтримка</a></td>
+            </tr>
+            <tr>
+              <td><a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">Наша команда</a></td>
+              <td><a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">Про нас</a></td>
+            </tr>
+            <tr>
+              <td><a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">Зв'яжіться з нами</a></td>
+              <td><a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">Веб дизайн</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="strip">
+      <span> &#9679; Адресса: Кавалерідзе 9а/14, Львів, Україна &#9679; Телефон: 0487636854 &#9679; </span>
+    </div>
+    <div class="bottom">
+      <span>Privacy policy &#9679; 2017 UCU students </span>
+    </div>
+  </div>
+
+
+
+  <div class="modal fade bs-example-modal-lg-1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content-buy">
+        <img src="big_img.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="prod-container">
+          <div id="prod-myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#prod-myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#prod-myCarousel" data-slide-to="1"></li>
+              <li data-target="#prod-myCarousel" data-slide-to="2"></li>
+              <li data-target="#prod-myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner prod-carousel">
+              <div class="item active">
+                <div class="slide-pic">
+                  <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17201227_1871620226454093_9001221302285229406_n.jpg?oh=9aeb8d61d23281c18ad0fe7df55b57af&oe=59CFEA61" alt=""></img>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="slide-pic">
+                  <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190540_1871620206454095_8424946997986623246_n.jpg?oh=3d3e47516fd31d1f63e861f8c461201b&oe=59E42EDB" alt="">
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="slide-pic">
+                  <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190776_1871620186454097_795380121869963795_n.jpg?oh=aad605e21e2714d9065d74e71b6655f3&oe=59D75414" alt="">
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="slide-pic">
+                  <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/16997689_1871620229787426_8545824893734228741_n.jpg?oh=04334a75877f33b457bcd7d639f5ee97&oe=59A7654C" alt="" >
+                </div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#prod-myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#prod-myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+        <div class="modal-content-text">
+          <span> Назва продукту </span>
+          <br>
+          <p> Опис продукту. Туда-сюда, всякий текст і так по колу.
+            Туда-сюда, всякий текст і так по колу.
+            Туда-сюда, всякий текст і так по колу.
+            Туда-сюда, всякий текст і так по колу.
+            Туда-сюда, всякий текст і так по колу.
+            Туда-сюда, всякий текст і так по колу.
+            Туда-сюда, всякий текст і так по колу.
+          </p>
+          <br>
+          <h3>  Ціна: 100 грн </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

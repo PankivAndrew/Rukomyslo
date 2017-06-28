@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load staticfiles %}
+  <title>Зайти</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,700|Varela+Round" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="icon" href="http://rukomysly.com.ua/image/catalog/favicon.png">
+  <link href={% static 'polls/login/login.css' %} type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marck+Script">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pangolin">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="background">
+    <!-- <div class="blure"> -->
+      <div class="wrapper">
+        <form class="form-signin">
+        <div class="form-signin-heading">
+          <img src="http://rukomysly.com.ua/image/catalog/favicon.png">
+        <h2>Рукомисли</h2></div>
+        <hr></hr>
+        <input type="text" class="form-control" name="username" placeholder="Адресса електорної пошти" />
+        <input type="password" class="form-control" name="password" placeholder="Пароль" required=""/>
+        <label class="checkbox">
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Запам'ятати мене
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Увійти</button>
+      </form>
+      <p class="noaccount">Не маєте ще акаунта? <a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">
+        Зареєструйтесь тут</a></p>
+      <p class="or">Або</p>
+      <p class="reg_by_others">Увійдіть за допомогою</p>
+      <div class="all"><div class="fb">
+        <a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">
+        <img src="http://dpbuvr.gov.ua/wp-content/uploads/2017/04/facebook_round_logo.png" alt=""></a></div>
+        <div class="g">
+        <a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">
+        <img src="http://www.openduka.org/assets/img/googleplus.png" alt=""></a>
+      </div>
+      <div class="twitter">
+        <a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">
+        <img src="https://g.twimg.com/about/feature-corporate/image/twitterbird_RGB.png" alt=""></a></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

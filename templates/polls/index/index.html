@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="main.css">
+  {% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href={% static "polls/index/main.css" %} />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -23,10 +24,10 @@
       <span>Рукомисли</span>
     </div>
     <div class="header-right-part">
-      <a href="#">Головна</a>
-      <a href="products.html">Вироби</a>
-      <a href="about_page.html"> Про нас</a>
-      <a href="login.html">Зайти</a>
+      <a href="/home">Головна</a>
+      <a href="/products">Вироби</a>
+      <a href="/about"> Про нас</a>
+      <a href="/login">Зайти</a>
     </div>
   </div>
   <div class="big-img"></div>
@@ -37,58 +38,61 @@
             <span>Знайди своє</span>
         </div>
     </section>
-
-    <section class="initial_display_product_list">
+  <section class="initial_display_product_list">
+    {% if latest_product_list %}
+        {% for products, images in latest_product_list %}
         <article class="product_home">
-            <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17201227_1871620226454093_9001221302285229406_n.jpg?oh=9aeb8d61d23281c18ad0fe7df55b57af&oe=59CFEA61" alt="" class="full_scale_element_image_sepia" />
-            <div class="overlay_to_bottom">
-                <h4 class="product_title_text">Назва</h4>
+            <img src="{{ images.Image.url }}" alt="" class="full_scale_element_image_sepia" />
+            <div class="overlay_to_bottom">[
+                <h4 class="product_title_text">{{ products.Name }}</h4>
             </div>
             <div class="overlay_to_top">
               <p class="product_description_text">
-                  Price: 1000000000$
+                  Price:{{ products.Price }} $
               </p>
             </div>
         </article>
+        {% endfor %}
+        {% endif %}
 
-        <article class="product_home">
-            <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190540_1871620206454095_8424946997986623246_n.jpg?oh=3d3e47516fd31d1f63e861f8c461201b&oe=59E42EDB" alt="" class="full_scale_element_image_sepia" />
-
-            <div class="overlay_to_bottom">
-                <h4 class="product_title_text">Назва</h4>
-            </div>
-            <div class="overlay_to_top">
-              <p class="product_description_text">
-                  Price: 1000000000$
-              </p>
-            </div>
-        </article>
-
-        <article class="product_home">
-            <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190776_1871620186454097_795380121869963795_n.jpg?oh=aad605e21e2714d9065d74e71b6655f3&oe=59D75414" alt="" class="full_scale_element_image_sepia" />
-
-            <div class="overlay_to_bottom">
-                <h4 class="product_title_text">Назва</h4>
-            </div>
-            <div class="overlay_to_top">
-              <p class="product_description_text">
-                  Price: 1000000000$
-              </p>
-            </div>
-        </article>
-
-        <article class="product_home">
-            <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/16997689_1871620229787426_8545824893734228741_n.jpg?oh=04334a75877f33b457bcd7d639f5ee97&oe=59A7654C" alt="" class="full_scale_element_image_sepia" />
-
-            <div class="overlay_to_bottom">
-                <h4 class="product_title_text">Назва</h4>
-            </div>
-            <div class="overlay_to_top">
-              <p class="product_description_text">
-                  Price: 1000000000$
-              </p>
-            </div>
-        </article>
+{#        <article class="product_home">#}
+{#            <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190540_1871620206454095_8424946997986623246_n.jpg?oh=3d3e47516fd31d1f63e861f8c461201b&oe=59E42EDB" alt="" class="full_scale_element_image_sepia" />#}
+{##}
+{#            <div class="overlay_to_bottom">#}
+{#                <h4 class="product_title_text">Назва</h4>#}
+{#            </div>#}
+{#            <div class="overlay_to_top">#}
+{#              <p class="product_description_text">#}
+{#                  Price: 1000000000$#}
+{#              </p>#}
+{#            </div>#}
+{#        </article>#}
+{##}
+{#        <article class="product_home">#}
+{#            <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190776_1871620186454097_795380121869963795_n.jpg?oh=aad605e21e2714d9065d74e71b6655f3&oe=59D75414" alt="" class="full_scale_element_image_sepia" />#}
+{##}
+{#            <div class="overlay_to_bottom">#}
+{#                <h4 class="product_title_text">Назва</h4>#}
+{#            </div>#}
+{#            <div class="overlay_to_top">#}
+{#              <p class="product_description_text">#}
+{#                  Price: 1000000000$#}
+{#              </p>#}
+{#            </div>#}
+{#        </article>#}
+{##}
+{#        <article class="product_home">#}
+{#            <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/16997689_1871620229787426_8545824893734228741_n.jpg?oh=04334a75877f33b457bcd7d639f5ee97&oe=59A7654C" alt="" class="full_scale_element_image_sepia" />#}
+{##}
+{#            <div class="overlay_to_bottom">#}
+{#                <h4 class="product_title_text">Назва</h4>#}
+{#            </div>#}
+{#            <div class="overlay_to_top">#}
+{#              <p class="product_description_text">#}
+{#                  Price: 1000000000$#}
+{#              </p>#}
+{#            </div>#}
+{#        </article>#}
     </section>
 </aside>
   <div class="carousel-section">
