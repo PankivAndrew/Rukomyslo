@@ -10,12 +10,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marck+Script">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pangolin">
   <title> Рукомисли </title>
-  <script src="prodj.js"></script>
+  <script src={% static 'polls/product/prodj.js' %}></script>
 </head>
 <body>
   <div class="header">
     <div class="header-left-part">
-      <img src="logo.jpg" alt="">
+      <img src={% static 'polls/images/logo.jpg' %} alt="">
       <div class="header-logo">
         <!-- <span class="small-text">Соціальне підприємництво</span> -->
         <span>Рукомисли</span>
@@ -30,7 +30,7 @@
   </div>
   <div class="main-container">
     <div class="prod-background">
-      <img src="big_img.png">
+      <img src={% static 'polls/images/big_img.png' %}>
     </div>
     <div class="cart-container" ondragover="allowDrop(event)" ondrop="drop(event)">
       <hr>
@@ -213,7 +213,7 @@
         </div>
         <div class="stay-con-fb">
           <a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">
-            <img src="fb-logo.png" alt="">
+            <img src="{% static 'polls/images/fb-logo.png' %}" alt="">
           </a>
         </div>
       </div>

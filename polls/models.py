@@ -70,7 +70,7 @@ class OrderProduct(models.Model):
     ProductQuantity = models.IntegerField
     Product = models.ForeignKey(Product, on_delete=models.CASCADE)
     Name = models.CharField(max_length=100)
-    Price = models.DecimalField(max_digits=10,decimal_places=5)
+    Price = models.DecimalField(max_digits=10, decimal_places=2)
     Description = models.TextField()
     IsDeleted = models.BinaryField()
 
