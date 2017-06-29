@@ -1,9 +1,19 @@
 
 .container {
-    padding: 16px;
-    width: 300px;
+    padding: 3%;
+    width: 100%;
+}
+.container2{
+  width: 70%;
+  padding: 3%;
+  margin: 0% 14% 0% 14%;
 }
 
+/* The "Forgot password" text */
+span.psw {
+    float: right;
+    padding-top: 16%;
+}
 body {
   font-family: Pangolin;
 }
@@ -19,39 +29,43 @@ body {
   background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
-  z-index:0;
+  /*z-index:0;*/
   display: flex;
   justify-content: center;
   overflow: hidden;
 }
 .wrapper {
-  z-index: 10;
+  /*z-index: 10;*/
   padding: 12% 12%;
   align-self: center;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .form-signin {
-  max-width: 380px;
-  padding: 15px 35px 25px;
+  max-width: 80%;
+  padding: 10% 5% 3%;
   margin: 0 auto;
   background-color: #fff;
   background-color: rgba(0, 0, 0, 0);
   color: #fff;*/
 }
 
-/* Full-width inputs */
 input[type=text], input[type=password] {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 2% 2%;
+    margin: 3% 0%;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1% solid #ccc;
     box-sizing: border-box;
 }
 
+button, input, select{
+  border-radius: 30px;
+  /*border: none;*/
+}
+
 .btn{
-  border-radius: 100px / 100px;
+  border-radius: 30px;
   background-color: #212223;
   border-color: #212223;
 }
@@ -63,39 +77,19 @@ input[type=text], input[type=password] {
 }
 
 .form-control{
-  padding: 0px 30px;
+  padding: 0% 30%;
   margin: 11% 0%;
-  border-radius: 100px / 100px;
+  border-radius: 30px;
 }
 .noaccount{
   color:#fff;
-  padding-left: 60px;
+  padding-left: 10%;
 
-}
-.form-signin-heading{
-  padding-right: 10px;
-  margin-bottom: 700px;
-}
-.form-signin-heading img{
-  padding-left: 1px;
-}
-.form-signin-heading h2{
-  font-size: 40px;
-  padding-left: 10px;
-  font-family: Mistral;
-}
-.hr{
-  position: relative;
-  padding: 0px;
-  margin-top: 0px;
-}
-.form-signin-heading{
-  margin-bottom: -6%;
-  display: inline-flex;
 }
 .or{
   color:#fff;
   text-align: center;
+  padding-top: 3%;
 }
 .reg_by_others{
   color:#fff;
@@ -105,18 +99,118 @@ input[type=text], input[type=password] {
 .all img{
 display: flex;
 float: left;
-margin: 18px;
-margin-left: 20px;
+/*margin: 1%;*/
+margin-left: 10%;
 }
 .fb img{
   height: 50px;
-  margin-left: 60px;
+  margin-left: 25%;
 }
 .g img{
   height: 50px;
 }
 .twitter img{
   height: 49px;
-  /*padding-top: 30px;*/
-  /*margin-top: 0px;*/
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 2% 2%;
+    /*margin: 4% 0%;*/
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    background-color: #f44336;
+    padding-right: 50%
+}
+
+/* Float cancel ad signup buttons and add an equal width */
+.cancelbtn,.signupbtn {
+    float: left;
+    width: 30%;
+    border-radius: 30px;
+    padding: 2% 10%;
+    margin: 0% 10%;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 1%;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% 2% 1% 10%; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.header {
+  width: 100%;
+  background-color: #212223;
+  color:#fcf8e3;
+  padding: 7px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position:fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.header-right-part {
+  width: 40%;
+  display: flex;
+}
+
+.header-right-part a {
+  padding: 5px;
+  margin: 0 auto;
+  background-color: #212223;
+  color: #fcf8e3;
+  border: solid;
+  border-color: #212223;
+  border-width: 1px;
+  font-family: Marck Script;
+  font-size: 25px;
+  width: auto;
+}
+.header-right-part a:hover {
+  background-color:  #fcf8e3;
+  color: #212223;
+}
+
+.header-left-part {
+  width: 17%;
+  display: flex;
+}
+
+.header-left-part img {
+  height: 47px;
+  width: 47px;
+  border-radius: 47px;
+  margin-right: 10%;
+  margin-top: 3px;
+}
+
+.header span {
+  font-size: 280%;
+  font-family: Mistral;
 }

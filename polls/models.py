@@ -10,14 +10,25 @@ class Categories(models.Model):
         return self.Name
 
 
+class Materials(models.Model):
+    MaterialsID = models.IntegerField(primary_key=True)
+    Name = models.CharField(max_length=100)
+    Categories = models.ForeignKey(Categories, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.Name
+
+
+
 class Product(models.Model):
     ProductID = models.IntegerField(primary_key=True)
     Name = models.CharField(max_length=200)
-    Price = models.DecimalField(max_digits=10,decimal_places=5)
+    Price = models.DecimalField(max_digits=10,decimal_places=2)
     Description = models.TextField()
     Quantity = models.IntegerField()
     Address = models.CharField(max_length=200)
-    Category = models.ForeignKey(Categories, on_delete=models.CASCADE)
+    Category = models.ForeignKey(Categories, on_delete=models.CASCADE, null=True)
+    Materials = models.ForeignKey(Materials, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.Name
@@ -39,6 +50,7 @@ class ProductImages(models.Model):
     Image = models.ImageField()
     NameOfImage = models.CharField(max_length=50)
     Product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    MainImage = models.BooleanField(default=False)
 
     def __str__(self):
         return self.NameOfImage
@@ -56,7 +68,7 @@ class Customer(models.Model):
 class Order(models.Model):
     OrderID = models.IntegerField(primary_key=True)
     Customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    OrderTotalPrice = models.DecimalField(max_digits=10,decimal_places=5)
+    OrderTotalPrice = models.DecimalField(max_digits=10,decimal_places=2)
     OrderDate = models.DateField()
     OrderDetails = models.TextField()
 
@@ -73,14 +85,6 @@ class OrderProduct(models.Model):
     Price = models.DecimalField(max_digits=10, decimal_places=2)
     Description = models.TextField()
     IsDeleted = models.BinaryField()
-
-    def __str__(self):
-        return self.Name
-
-
-class Materials(models.Model):
-    MaterialsID = models.IntegerField(primary_key=True)
-    Name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.Name

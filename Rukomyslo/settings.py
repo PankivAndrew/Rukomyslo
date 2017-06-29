@@ -119,7 +119,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
+MEDIA_ROOT = '/home/paniv/PycharmProjects/Rukomyslo/Media/polls/ProductImages'
+MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  {% load staticfiles %}
+  {% load static %}
   <title>Зайти</title>
   <link href="https://fonts.googleapis.com/css?family=Oswald:300,700|Varela+Round" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -9,17 +9,31 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marck+Script">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pangolin">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href={% static 'polls/login/login.css' %} type="text/css" rel="stylesheet" />
+  <link href="{% static 'polls/login/login.css' %}" type="text/css" rel="stylesheet" />
 </head>
 <body>
+
+  <div class="header">
+        <div class="header-left-part">
+          <img src={% static 'polls/images/logo.jpg' %} alt="">
+          <span>Рукомисли</span>
+        </div>
+        <div class="header-right-part">
+          <a href=/home>Головна</a>
+          <a href=/products>Вироби</a>
+          <a href=/about> Про нас</a>
+          <a href=/login>Зайти</a>
+        </div>
+      </div>
+
   <div class="background">
       <div class="wrapper">
         <form class="form-signin">
         <div class="container">
-          <div class="form-signin-heading">
+          <!-- <div class="form-signin-heading">
             <img src="http://rukomysly.com.ua/image/catalog/favicon.png">
           <h2>Рукомисли</h2></div>
-          <hr></hr>
+          <hr></hr> -->
           <input type="text" class="form-control" name="username" placeholder="Адресса електорної пошти" />
           <input type="password" class="form-control" name="password" placeholder="Пароль" required=""/>
           <label class="checkbox">
@@ -44,8 +58,31 @@
         </label>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Увійти</button>
       </form> -->
-      <p class="noaccount">Не маєте ще акаунта? <a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">
-        Зареєструйтесь тут</a></p>
+      <p class="noaccount">Не маєте ще акаунта?</p> <button onclick="document.getElementById('id01').style.display='block'">
+        Зареєструйтесь тут</button>
+        <div id="id01" class="modal">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <form class="modal-content animate" action="/action_page.php">
+            <div class="container2">
+              <label><b>Адресса електроної пошти</b></label>
+              <input type="text" placeholder="Впишіть електрону адрессу" name="email" required>
+
+              <label><b>Пароль</b></label>
+              <input type="password" placeholder="Впишіть пароль" name="psw" required>
+
+              <label><b>Повторіть пароль</b></label>
+              <input class="but2" type="password" placeholder="Повторіть пароль" name="psw-repeat" required>
+              <input type="checkbox" checked="checked"> Запам'ятати мене'
+              <p>Створюючи акаунт ви погоджуєтесь з нашими <a href="#">Умовами & Конфіденційністю</a>.</p>
+
+              <div class="clearfix">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Відмінити</button>
+                <button type="submit" class="signupbtn">Зареєструвати</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
       <p class="or">Або</p>
       <p class="reg_by_others">Увійдіть за допомогою</p>
       <div class="all"><div class="fb">

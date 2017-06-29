@@ -72,7 +72,7 @@ font-family: Pangolin;
 .big-img {
   height: 120vh;
   width: 100%;
-  background-image: url("ruk.jpg");
+  background-image: url("back.jpg");
   background-size: cover;
 }
 
@@ -534,6 +534,20 @@ div.container {
 
 }
 
+.full-screen {
+  width: 100%;
+  padding: 20px 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+
 .product_title_text {
   margin: 4px;
 }
@@ -577,3 +591,14 @@ div.container {
 .full_scale_element_image_sepia:hover {
   filter: none;
 }
+
+.blur {-webkit-filter: blur(4px);filter: blur(4px);}
+.brightness {-webkit-filter: brightness(250%);filter: brightness(250%);}
+.contrast {-webkit-filter: contrast(180%);filter: contrast(180%);}
+.grayscale {-webkit-filter: grayscale(100%);filter: grayscale(100%);}
+.huerotate {-webkit-filter: hue-rotate(180deg);filter: hue-rotate(180deg);}
+.invert {-webkit-filter: invert(100%);filter: invert(100%);}
+.opacity {filter: opacity(50%);}
+.saturate {-webkit-filter: saturate(7); filter: saturate(7);}
+.sepia {-webkit-filter: sepia(100%);filter: sepia(100%);}
+.shadow {filter: drop-shadow(8px 8px 10px green);}

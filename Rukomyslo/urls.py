@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
+import django.views.static
+from Rukomyslo import settings
 
 urlpatterns = [
     url(r'', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^media/(?P<path>.*)$', django.views.static.serve, {'document_root': settings.MEDIA_ROOT})
 ]

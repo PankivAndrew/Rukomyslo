@@ -40,9 +40,9 @@
     </section>
   <section class="initial_display_product_list">
     {% if latest_product_list %}
-        {% for products, images in latest_product_list %}
+        {% for products,FirstImage,images in latest_product_list %}
         <article class="product_home">
-            <img src="{{ images.Image.url }}" alt="" class="full_scale_element_image_sepia" />
+            <img src="{{ FirstImage.Image.url }}" alt="" class="full_scale_element_image_sepia" />
             <div class="overlay_to_bottom">[
                 <h4 class="product_title_text">{{ products.Name }}</h4>
             </div>
@@ -55,44 +55,7 @@
         {% endfor %}
         {% endif %}
 
-{#        <article class="product_home">#}
-{#            <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190540_1871620206454095_8424946997986623246_n.jpg?oh=3d3e47516fd31d1f63e861f8c461201b&oe=59E42EDB" alt="" class="full_scale_element_image_sepia" />#}
-{##}
-{#            <div class="overlay_to_bottom">#}
-{#                <h4 class="product_title_text">Назва</h4>#}
-{#            </div>#}
-{#            <div class="overlay_to_top">#}
-{#              <p class="product_description_text">#}
-{#                  Price: 1000000000$#}
-{#              </p>#}
-{#            </div>#}
-{#        </article>#}
-{##}
-{#        <article class="product_home">#}
-{#            <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190776_1871620186454097_795380121869963795_n.jpg?oh=aad605e21e2714d9065d74e71b6655f3&oe=59D75414" alt="" class="full_scale_element_image_sepia" />#}
-{##}
-{#            <div class="overlay_to_bottom">#}
-{#                <h4 class="product_title_text">Назва</h4>#}
-{#            </div>#}
-{#            <div class="overlay_to_top">#}
-{#              <p class="product_description_text">#}
-{#                  Price: 1000000000$#}
-{#              </p>#}
-{#            </div>#}
-{#        </article>#}
-{##}
-{#        <article class="product_home">#}
-{#            <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/16997689_1871620229787426_8545824893734228741_n.jpg?oh=04334a75877f33b457bcd7d639f5ee97&oe=59A7654C" alt="" class="full_scale_element_image_sepia" />#}
-{##}
-{#            <div class="overlay_to_bottom">#}
-{#                <h4 class="product_title_text">Назва</h4>#}
-{#            </div>#}
-{#            <div class="overlay_to_top">#}
-{#              <p class="product_description_text">#}
-{#                  Price: 1000000000$#}
-{#              </p>#}
-{#            </div>#}
-{#        </article>#}
+
     </section>
 </aside>
   <div class="carousel-section">
@@ -101,22 +64,29 @@
     <div class="container">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-          <li data-target="#myCarousel" data-slide-to="3"></li>
-        </ol>
-        <div class="carousel-inner">
+        {% if list_of_all_products %}
+          {% for products,images in list_of_all_products %}
+        {% if forloop.counter0 == 0 %}
+          <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" class="active"></li>
+        {% else %}
+            <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}"></li>
+        {% endif %}
+
+        {% endfor %}
+            </ol>
+          <div class="carousel-inner">
+         {% for products,images in list_of_all_products %}
+        {% if forloop.counter0 == 0 %}
           <div class="item active">
             <div class="slide-pic">
-              <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17201227_1871620226454093_9001221302285229406_n.jpg?oh=9aeb8d61d23281c18ad0fe7df55b57af&oe=59CFEA61" alt=""></img>
+              <img src="{{ images.Image.url }}" alt=""/>
             </div>
             <div class="content">
               <div class="item-name">
-                <span> Назва </span>
+                <span> {{ products.Name }} </span>
               </div>
               <div class="item-desc">
-                <span> Опис продукту</span>
+                <span> {{ products.Description }}</span>
               </div>
               <div class="but">
                 <button type="button"> Дізнайтесь більше </button>
@@ -124,35 +94,18 @@
               <div class="item-back"></div>
             </div>
           </div>
+        {% else %}
 
           <div class="item">
             <div class="slide-pic">
-              <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190540_1871620206454095_8424946997986623246_n.jpg?oh=3d3e47516fd31d1f63e861f8c461201b&oe=59E42EDB" alt="">
+              <img src="{{ images.Image.url }}" alt=""/>
             </div>
             <div class="content">
               <div class="item-name">
-                <span> Назва </span>
+                <span> {{ products.Name }} </span>
               </div>
               <div class="item-desc">
-                <span> Опис продукту </span>
-              </div>
-              <div class="but">
-                <button type="button"> Дізнайтесь більше</button>
-              </div>
-              <div class="item-back"></div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="slide-pic">
-              <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190776_1871620186454097_795380121869963795_n.jpg?oh=aad605e21e2714d9065d74e71b6655f3&oe=59D75414" alt="">
-            </div>
-            <div class="content">
-              <div class="item-name">
-                <span> Назва </span>
-              </div>
-              <div class="item-desc">
-                <span> Опис продукту </span>
+                <span> {{ products.Description }}</span>
               </div>
               <div class="but">
                 <button type="button"> Дізнайтесь більше </button>
@@ -160,25 +113,10 @@
               <div class="item-back"></div>
             </div>
           </div>
-
-          <div class="item">
-            <div class="slide-pic">
-              <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/16997689_1871620229787426_8545824893734228741_n.jpg?oh=04334a75877f33b457bcd7d639f5ee97&oe=59A7654C" alt="" >
+            {% endif %}
+            {% endfor %}
             </div>
-            <div class="content">
-              <div class="item-name">
-                <span> Назва </span>
-              </div>
-              <div class="item-desc">
-                <span> Опис продукту </span>
-              </div>
-              <div class="but">
-                <button type="button"> Дізнайтесь більше </button>
-              </div>
-              <div class="item-back"></div>
-            </div>
-          </div>
-        </div>
+           {% endif %}
         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left"></span>
           <span class="sr-only">Previous</span>
@@ -189,6 +127,7 @@
         </a>
       </div>
     </div>
+
   </div>
   <div class="donors">
     <div class="donors-head">
@@ -293,7 +232,7 @@
             </tr>
             <tr>
               <td><a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">Наша команда</a></td>
-              <td><a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">Про нас</a></td>
+              <td><a href="/about">Про нас</a></td>
             </tr>
             <tr>
               <td><a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">Зв'яжіться з нами</a></td>
