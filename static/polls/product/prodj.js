@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function initAffix() {
-  $('.background').affix({offset: {bottom: getBottomOffset()} });
+  $('.prod-background').affix({offset: {bottom: getBottomOffset()} });
   // 49 is card container top padding
   $('.cart-container').affix({offset: {bottom: getBottomOffset() + 49} });
 }

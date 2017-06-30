@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'polls/buy/buy.css' %}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pangolin">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="icon" href="http://rukomysly.com.ua/image/catalog/favicon.png" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{% static 'polls/buy/buy.js' %}"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marck+Script">
+</head>
+<body>
+  <div class="header">
+    <div class="header-left-part">
+      <img src="{% static 'polls/images/logo.jpg' %}" alt="">
+      <div class="header-logo">
+        <!-- <span class="small-text">Соціальне підприємництво</span> -->
+        <span>Рукомисли</span>
+      </div>
+    </div>
+    <div class="header-right-part">
+      <a href="/home">Головна</a>
+      <a href="/products">Вироби</a>
+      <a href="/about"> Про нас</a>
+      <a href="/login">Зайти</a>
+    </div>
+  </div>
+  <div class="buy-background">
+  </div>
+  <div class="buy-container">
+    <div class="left-column">
+      <div class="buy-cart">
+        <span>Корзина</span>
+        <hr>
+        <div class="buy-item">
+            <div class="buy-item-img">
+              <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17201227_1871620226454093_9001221302285229406_n.jpg?oh=9aeb8d61d23281c18ad0fe7df55b57af&oe=59CFEA61" alt="">
+              <div class="overlay">
+                <span>x</span>
+              </div>
+            </div>
+            <span>Назва продукту</span>
+            <span>100</span>
+          </div>
+        <div class="buy-item">
+            <div class="buy-item-img">
+              <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190540_1871620206454095_8424946997986623246_n.jpg?oh=3d3e47516fd31d1f63e861f8c461201b&oe=59E42EDB" alt="">
+              <div class="overlay">
+                <span>x</span>
+              </div>
+            </div>
+            <span>Назва продукту</span>
+            <span>100</span>
+          </div>
+        <div class="buy-item">
+            <div class="buy-item-img">
+              <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190776_1871620186454097_795380121869963795_n.jpg?oh=aad605e21e2714d9065d74e71b6655f3&oe=59D75414" alt="">
+              <div class="overlay">
+                <span>x</span>
+              </div>
+            </div>
+            <span>Назва продукту</span>
+            <span>100</span>
+          </div>
+      </div>
+      <div class="total-price">
+        <span>Загальна ціна:</span>
+        <span>300</span>
+      </div>
+    </div>
+    <div class="right-column">
+      <div class="step">
+        <div class="step-header">
+          <div></div>
+          <span>Інформація користувача</span>
+          <button type="button" name="button" onclick="goToStep(0)">+</button>
+        </div>
+        <hr>
+        <div class="step-content">
+          <div class="content-row">
+            <input type="text" name="firstName" value="" placeholder="Ім'я">
+            <input type="text" name="lastName" value="" placeholder="Прізвище">
+          </div>
+          <div class="content-row">
+            <input type="email" name="email" value="" placeholder="E-mail">
+            <input type="tel" name="phone" value="" placeholder="Телефон">
+          </div>
+          <button type="button" name="button" onclick="nextStep()">Наступний крок</button>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">
+          <div></div>
+          <span>Доставка</span>
+          <button type="button" name="button" onclick="goToStep(1)">+</button>
+        </div>
+        <hr>
+        <div class="step-content">
+          <div class="content-row">
+            <select class="" name="">
+              <option value="">Оберіть місто</option>
+              <option value="Львів">Львів</option>
+              <option value="Київ">Київ</option>
+              <option value="Одеса">Одеса</option>
+              <option value="Чернівці">Чернівці</option>
+            </select>
+            <select class="" name="">
+              <option value="">Оберіть відділення</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <button type="button" name="button" onclick="nextStep()">Наступний крок</button>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">
+          <div></div>
+          <span>Оплата</span>
+          <button type="button" name="button" onclick="goToStep(2)">+</button>
+        </div>
+        <hr>
+        <div class="step-content">
+          <div class="content-row">
+            <span>Оберіть тип оплати:</span>
+          </div>
+          <div class="content-column">
+            <div class="">
+              <input id="visa-radio" type="radio" name="pay" value="Visa">
+              <label for="visa-radio">Visa</label>
+            </div>
+            <div class="">
+              <input id="cash-radio" type="radio" name="pay" value="Cash">
+              <label for="cash-radio">Готівка</label>
+            </div>
+            <div class="">
+              <input id="nocash-radio" type="radio" name="pay" value="NoCash">
+              <label for="nocash-radio">Безготівка</label>
+            </div>
+          </div>
+          <button type="button" name="button">Оплатити</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

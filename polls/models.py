@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class Categories(models.Model):
     CategoryID = models.IntegerField(primary_key=True)
-    Name = models.CharField(max_length=100)
+    Name = models.CharField(max_length=191)
 
     def __str__(self):
         return self.Name
@@ -12,21 +12,20 @@ class Categories(models.Model):
 
 class Materials(models.Model):
     MaterialsID = models.IntegerField(primary_key=True)
-    Name = models.CharField(max_length=100)
+    Name = models.CharField(max_length=191)
     Categories = models.ForeignKey(Categories, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.Name
 
 
-
 class Product(models.Model):
     ProductID = models.IntegerField(primary_key=True)
-    Name = models.CharField(max_length=200)
+    Name = models.CharField(max_length=191)
     Price = models.DecimalField(max_digits=10,decimal_places=2)
     Description = models.TextField()
     Quantity = models.IntegerField()
-    Address = models.CharField(max_length=200)
+    Address = models.CharField(max_length=191)
     Category = models.ForeignKey(Categories, on_delete=models.CASCADE, null=True)
     Materials = models.ForeignKey(Materials, on_delete=models.CASCADE, null=True)
 

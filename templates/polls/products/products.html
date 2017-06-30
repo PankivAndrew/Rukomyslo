@@ -30,7 +30,7 @@
   </div>
   <div class="main-container">
     <div class="prod-background">
-      <img src={% static 'polls/images/big_img.png' %}>
+      <img src={% static 'polls/images/big_img.jpg' %}>
     </div>
     <div class="cart-container" ondragover="allowDrop(event)" ondrop="drop(event)">
       <hr>
@@ -57,8 +57,7 @@
         <span> Загальна ціна: </span>
         <span> 300 </span>
         <br>
-        <button type="button" class="cart-button" data-toggle="modal" data-target=".bs-example-modal-lg-1">Купити</button>
-
+        <a href="/basket" class="cart-button">Купити</a>
 
       </div>
       <hr>
@@ -164,7 +163,7 @@
             </tr>
             <tr>
               <td><a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">Наша команда</a></td>
-              <td><a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">Про нас</a></td>
+              <td><a href="/about" >Про нас</a></td>
             </tr>
             <tr>
               <td><a href="https://www.facebook.com/rukomysly/?fref=ts" target="_blank">Зв'яжіться з нами</a></td>

@@ -1,0 +1,279 @@
+
+html {
+height: 100%;
+margin: 0;
+}
+
+body {
+min-height: 100%;
+margin: 0;
+color: #fcf8e3;
+font-family: Pangolin;
+}
+
+@font-face {
+  font-family: 'Mistral';
+  src:  url('Mistral.ttf') format('truetype');
+}
+
+.header {
+  width: 100%;
+  background-color: #212223;
+  color:#fcf8e3;
+  padding: 7px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position:fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.header-right-part {
+  width: 40%;
+  display: flex;
+}
+
+.header-right-part a {
+  padding: 5px;
+  margin: 0 auto;
+  background-color: #212223;
+  color: #fcf8e3;
+  border: solid;
+  border-color: #212223;
+  border-width: 1px;
+  font-family: Marck Script;
+  font-size: 25px;
+  width: auto;
+}
+.header-right-part a:hover {
+  background-color:  #fcf8e3;
+  color: #212223;
+}
+
+.header-left-part {
+  width: 17%;
+  display: flex;
+}
+
+.header-left-part img {
+  height: 47px;
+  width: 47px;
+  border-radius: 47px;
+  margin-right: 10%;
+  margin-top: 3px;
+}
+
+.header span {
+  font-size: 2.8em;
+  font-family: Mistral;
+}
+
+.buy-background {
+  height: 100vh;
+  width: 100%;
+  background-image: url("back.jpg");
+  background-size: cover;
+  position: absolute;
+  z-index: -1;
+}
+
+.buy-container{
+  padding-top: 80px;
+  padding-bottom: 20px;
+  width: 70%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: auto;
+  display: flex;
+
+}
+
+.left-column {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.buy-cart {
+  width: 100%;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.buy-cart span {
+  font-size: 30px;
+  font-family: Marck Script;
+  color: #fcf8e3;
+}
+
+.buy-item {
+  margin: 5px 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buy-item-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 90px;
+  overflow: hidden;
+  position: relative;
+  margin-right: 20px;
+}
+
+.buy-item-img > * {
+  border-radius: 100%;
+}
+
+.buy-item-img .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.buy-item-img .overlay span {
+  cursor: pointer;
+  font-size: 2em;
+  margin-top: 0;
+}
+
+.buy-item-img:hover .overlay {
+  display: flex;
+}
+
+.buy-item-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.buy-item span {
+  font-size: 20px;
+  font-family: Pangolin;
+  margin-top: 30px;
+}
+
+.total-price {
+  text-align: right;
+}
+
+.total-price span {
+  font-size: 25px;
+  font-family: Pangolin;
+  color: #fcf8e3;
+}
+
+.right-column {
+  width: 60%;
+}
+
+.step {
+  width: 100%;
+  text-align: center;
+}
+
+.step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.step-header span{
+  font-size: 30px;
+  font-family: Marck Script;
+  color:  #fcf8e3;
+}
+
+.step-header button {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: #fcf8e3;
+  color: #212223;
+  font-family: Pangolin;
+}
+
+.step hr, .buy-cart hr {
+  margin: 0;
+  float: center;
+  height: 1px;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #fcf8e3, rgba(255, 0, 0, 0));
+}
+
+.content-row {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.content-column {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-row input {
+  background-color: #fcf8e3;
+  color: #212223;
+  font-family: Pangolin;
+  font-size: 15px;
+  height: 30px;
+  width: 35%;
+  padding-left: 5px;
+}
+
+.step-content {
+  margin: 20px 0;
+  display: none;
+}
+
+.step-content button {
+  margin-top: 20px;
+  height: 30px;
+  width: 30%;
+  background-color: #212223;
+  color: #fcf8e3;
+  font-family: Pangolin;
+  font-size: 17px;
+  border-color: #fcf8e3;
+}
+
+.content-row select {
+  height: 30px;
+  color: #212223;
+  background-color: #fcf8e3;
+  font-family: Pangolin;
+  font-size: 15px;
+}
+
+.content-column label{
+  color: #fcf8e3;
+  font-family: Pangolin;
+  font-size: 18px;
+}
+
+.content-column div {
+  width: 50%;
+  text-align: left;
+}
+
+ .content-row span {
+   font-size: 20px;
+   font-family: Pangolin;
+   color: #fcf8e3;
+ }

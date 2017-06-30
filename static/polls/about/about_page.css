@@ -155,13 +155,14 @@ hr{
 
 .donors {
   text-align: center;
-  padding: 0px 0px 30px 0px;
+  padding-bottom: 30px;
   background-color: #fef9ff;
 }
 
 .donors span {
   font-size: 14px;
   color: #212223;
+  margin: 12px;
 }
 
 .donors img {
@@ -348,3 +349,28 @@ hr{
   font-family: Pangolin;
   color: #212223;
 }
+.btn{
+  margin: 3px 10px 0px 10px;
+  font-size: 15px;
+}
+.btn img{
+  height: 25px;
+  width: 25px;
+}
+.btn-primary{
+  background-color: #212223;
+  color: #fcf8e3;
+  border: none;
+}
+.btn-group>.btn:first-child {
+    margin-left: 15%;
+}
+.btn-primary:hover{
+  background-color:  #fcf8e3;
+  color: #212223;
+}
+/*.dropdown-menu>li>a{
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 1px 10px;
+}*/

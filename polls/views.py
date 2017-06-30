@@ -33,3 +33,11 @@ def about(request):
 
 def login(request):
     return render(request, 'polls/login/login.html')
+
+
+def basket(request):
+    return render(request, 'polls/buy/buy.html')
+
+
+def about_eng(request):
+    return render(request, 'polls/about_eng/about_page.html')
