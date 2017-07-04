@@ -1,40 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be972cfa-01bb-4e7c-bc08-ee67cb3db37c" name="Default" comment="Update">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/Anton_9bXlBqg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/Cucko.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/Cucko1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/CuteCat.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/FeltHat.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/FeltHat_0Y4bnfu.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/PurpleHat.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/clock.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/divo_sumka.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/divo_sumka1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/divo_sumka2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/pidstavka.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/pidstavka1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/pidstavka2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/statyetka.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/statyetka1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Media/polls/ProductImages/statyetka2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/polls/migrations/0009_auto_20170630_1023.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/polls/migrations/0010_auto_20170630_1025.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/polls/migrations/0011_auto_20170630_1026.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/polls/migrations/0012_product_description_eng.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/polls/index/big_img.jpg" afterPath="" />
+    <list default="true" id="be972cfa-01bb-4e7c-bc08-ee67cb3db37c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Rukomyslo/settings.py" afterPath="$PROJECT_DIR$/Rukomyslo/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Rukomyslo/urls.py" afterPath="$PROJECT_DIR$/Rukomyslo/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/polls/models.py" afterPath="$PROJECT_DIR$/polls/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/polls/urls.py" afterPath="$PROJECT_DIR$/polls/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/polls/views.py" afterPath="$PROJECT_DIR$/polls/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/polls/about/about_page.css" afterPath="$PROJECT_DIR$/static/polls/about/about_page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/polls/product/prod.css" afterPath="$PROJECT_DIR$/static/polls/product/prod.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/polls/about/about_page.html" afterPath="$PROJECT_DIR$/templates/polls/about/about_page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/polls/index/index.html" afterPath="$PROJECT_DIR$/templates/polls/index/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/polls/products/products.html" afterPath="$PROJECT_DIR$/templates/polls/products/products.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -661,7 +629,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498787343268</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update">
+      <created>1499201500936</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1499201500936</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
