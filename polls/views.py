@@ -20,7 +20,7 @@ def products(request):
     all_materials = Materials.objects.all()
     all_categories = Categories.objects.all()
     # list_of_products_and_images = [[product, ProductImages.objects.get(Product=product, MainImage=True),
-    #                                 ProductImages.objects.filter(Product=product)] for product in all_products]
+    #                                  ProductImages.objects.filter(Product=product)] for product in all_products]
     list_of_products_and_images = []
     for product in all_products:
         try:

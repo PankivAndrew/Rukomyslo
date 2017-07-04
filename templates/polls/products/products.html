@@ -99,9 +99,9 @@
             {% for products,FirstImage,images in list_of_products_and_images %}
         <div class="product" id="product-{{ forloop.counter }}" draggable="true" ondragstart="drag(event)">
             {% if FirstImage == '' %}
-          <img src="{{ FirstImage.Image.url }}" alt="">
+                <img src="{% static 'polls/images/no_image.png' %}" alt="">
             {% else %}
-            <img src="{% static 'polls/images/no_image.png' %}" alt="">
+                <img src="{{ FirstImage.Image.url }}" alt="">
             {% endif %}
           <div class="product-content">
             <span class="product-name"> {{ products.Name }} </span>
@@ -213,7 +213,7 @@
                 {% if forloop.counter0 == 0 %}
               <div class="item active">
                 <div class="slide-pic">
-                    {% if image == '' %}
+                    {% if image == '5' %}
                         <img src="{% static 'polls/images/no_image.png' %}" alt="">
                     {% else %}
                   <img src="{{ image.Image.url }}" alt="">
