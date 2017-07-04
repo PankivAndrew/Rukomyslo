@@ -63,7 +63,7 @@ body {
 }
 
 .header span {
-  font-size: 2.8em;
+  font-size: 280%;
   font-family: Mistral;
 }
 
@@ -606,5 +606,26 @@ div.prod-container {
 .bottom span {
   font-size: 85%;
   font-family: Pangolin;
+  color: #212223;
+}
+
+.btn{
+  margin: 3px 10px 0px 10px;
+  font-size: 15px;
+}
+.btn img{
+  height: 25px;
+  width: 25px;
+}
+.btn-primary{
+  background-color: #212223;
+  color: #fcf8e3;
+  border: none;
+}
+.btn-group>.btn:first-child {
+    margin-left: 15%;
+}
+.btn-primary:hover{
+  background-color:  #fcf8e3;
   color: #212223;
 }

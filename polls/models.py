@@ -22,8 +22,9 @@ class Materials(models.Model):
 class Product(models.Model):
     ProductID = models.IntegerField(primary_key=True)
     Name = models.CharField(max_length=191)
-    Price = models.DecimalField(max_digits=10,decimal_places=2)
-    Description = models.TextField()
+    Price = models.DecimalField(max_digits=10, decimal_places=2)
+    Description = models.TextField(max_length=1000)
+    Description_eng = models.TextField(max_length=1000)
     Quantity = models.IntegerField()
     Address = models.CharField(max_length=191)
     Category = models.ForeignKey(Categories, on_delete=models.CASCADE, null=True)

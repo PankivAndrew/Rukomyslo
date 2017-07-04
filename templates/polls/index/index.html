@@ -43,7 +43,7 @@
         {% for products,FirstImage,images in latest_product_list %}
         <article class="product_home">
             <img src="{{ FirstImage.Image.url }}" alt="" class="full_scale_element_image_sepia" />
-            <div class="overlay_to_bottom">[
+            <div class="overlay_to_bottom">
                 <h4 class="product_title_text">{{ products.Name }}</h4>
             </div>
             <div class="overlay_to_top">
@@ -85,9 +85,6 @@
               <div class="item-name">
                 <span> {{ products.Name }} </span>
               </div>
-              <div class="item-desc">
-                <span> {{ products.Description }}</span>
-              </div>
               <div class="but">
                 <button type="button"> Дізнайтесь більше </button>
               </div>
@@ -103,9 +100,6 @@
             <div class="content">
               <div class="item-name">
                 <span> {{ products.Name }} </span>
-              </div>
-              <div class="item-desc">
-                <span> {{ products.Description }}</span>
               </div>
               <div class="but">
                 <button type="button"> Дізнайтесь більше </button>

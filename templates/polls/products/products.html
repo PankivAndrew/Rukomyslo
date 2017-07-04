@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  {% load staticfiles %}
-  <link rel="stylesheet" type="text/css" href={% static 'polls/product/prod.css' %}>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'polls/product/prod.css' %}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="icon" href="http://rukomysly.com.ua/image/catalog/favicon.png" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -10,24 +10,30 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Marck+Script">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pangolin">
   <title> Рукомисли </title>
-  <script src={% static 'polls/product/prodj.js' %}></script>
+  <script src="{% static 'polls/product/prodj.js' %}"></script>
 </head>
 <body>
-  <div class="header">
-    <div class="header-left-part">
-      <img src={% static 'polls/images/logo.jpg' %} alt="">
-      <div class="header-logo">
-        <!-- <span class="small-text">Соціальне підприємництво</span> -->
-        <span>Рукомисли</span>
+    <div class="header">
+        <div class="header-left-part">
+          <img src="{% static 'polls/images/logo.jpg' %}" alt="">
+          <span>Рукомисли</span>
+{#          <div class="btn-group">#}
+{#            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">#}
+{#            <img src="{% static 'polls/images/ukraine_flag.ico' %}" alt="">Мова#}
+{#            <span class="caret"></span></button>#}
+{#            <ul class="dropdown-menu" role="menu">#}
+{#                <li><a href="/about">Українська</a></li>#}
+{#                <li><a href="/about_eng">English</a></li>#}
+{#            </ul>#}
+{#          </div>#}
+        </div>
+        <div class="header-right-part">
+          <a href="/home">Головна</a>
+          <a href="/products">Вироби</a>
+          <a href="/about"> Про нас</a>
+          <a href="/login">Зайти</a>
+        </div>
       </div>
-    </div>
-    <div class="header-right-part">
-      <a href="/home">Головна</a>
-      <a href="/products">Вироби</a>
-      <a href="/about"> Про нас</a>
-      <a href="/login">Зайти</a>
-    </div>
-  </div>
   <div class="main-container">
     <div class="prod-background">
       <img src={% static 'polls/images/big_img.jpg' %}>
@@ -36,26 +42,26 @@
       <hr>
       <div class="cart">
         <span> Корзина </span>
-        <div class="cart-item" draggable="true">
-          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190540_1871620206454095_8424946997986623246_n.jpg?oh=3d3e47516fd31d1f63e861f8c461201b&oe=59E42EDB" alt="">
-          <span> Назва продукту</span>
-          <span> 100  </span>
-        </div>
-        <div class="cart-item" draggable="true">
-          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190776_1871620186454097_795380121869963795_n.jpg?oh=aad605e21e2714d9065d74e71b6655f3&oe=59D75414" alt="">
-          <span> Назва продукту</span>
-          <span> 100  </span>
-        </div>
-        <div class="cart-item" draggable="true">
-          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/16997689_1871620229787426_8545824893734228741_n.jpg?oh=04334a75877f33b457bcd7d639f5ee97&oe=59A7654C" alt="">
-          <span> Назва продукту</span>
-          <span> 100  </span>
-        </div>
+{#        <div class="cart-item" draggable="true">#}
+{#          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190540_1871620206454095_8424946997986623246_n.jpg?oh=3d3e47516fd31d1f63e861f8c461201b&oe=59E42EDB" alt="">#}
+{#          <span> Назва продукту</span>#}
+{#          <span> 100  </span>#}
+{#        </div>#}
+{#        <div class="cart-item" draggable="true">#}
+{#          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/17190776_1871620186454097_795380121869963795_n.jpg?oh=aad605e21e2714d9065d74e71b6655f3&oe=59D75414" alt="">#}
+{#          <span> Назва продукту</span>#}
+{#          <span> 100  </span>#}
+{#        </div>#}
+{#        <div class="cart-item" draggable="true">#}
+{#          <img src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/16997689_1871620229787426_8545824893734228741_n.jpg?oh=04334a75877f33b457bcd7d639f5ee97&oe=59A7654C" alt="">#}
+{#          <span> Назва продукту</span>#}
+{#          <span> 100  </span>#}
+{#        </div>#}
       </div>
       <hr>
       <div class="total-price">
         <span> Загальна ціна: </span>
-        <span> 300 </span>
+        <span> 0 </span>
         <br>
         <a href="/basket" class="cart-button">Купити</a>
 
@@ -92,8 +98,11 @@
         {% if list_of_products_and_images %}
             {% for products,FirstImage,images in list_of_products_and_images %}
         <div class="product" id="product-{{ forloop.counter }}" draggable="true" ondragstart="drag(event)">
-
+            {% if FirstImage == '' %}
           <img src="{{ FirstImage.Image.url }}" alt="">
+            {% else %}
+            <img src="{% static 'polls/images/no_image.png' %}" alt="">
+            {% endif %}
           <div class="product-content">
             <span class="product-name"> {{ products.Name }} </span>
             <br>
@@ -204,13 +213,21 @@
                 {% if forloop.counter0 == 0 %}
               <div class="item active">
                 <div class="slide-pic">
+                    {% if image == '' %}
+                        <img src="{% static 'polls/images/no_image.png' %}" alt="">
+                    {% else %}
                   <img src="{{ image.Image.url }}" alt="">
+                    {% endif %}
                 </div>
               </div>
                 {% else %}
               <div class="item">
                 <div class="slide-pic">
+                  {% if image == '' %}
+                        <img src="{% static 'polls/images/no_image.png' %}" alt="">
+                    {% else %}
                   <img src="{{ image.Image.url }}" alt="">
+                    {% endif %}
                 </div>
               </div>
                 {% endif %}

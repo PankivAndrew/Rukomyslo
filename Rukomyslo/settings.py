@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'Rukomyslo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Rukomyslo',
+        'NAME': 'Rukomysly',
         'USER': 'root',
         'PASSWORD': 'pankiv020998',
         'HOST': '127.0.0.1',
@@ -124,5 +124,7 @@ MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static')
 ]
+
+LOGIN_REDIRECT_URL = 'home'
